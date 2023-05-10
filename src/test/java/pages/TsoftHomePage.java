@@ -1,6 +1,5 @@
 package pages;
 
-import baseconfig.DriverManager;
 import baseconfig.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
