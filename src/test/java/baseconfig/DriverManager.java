@@ -13,10 +13,7 @@ public class DriverManager {
     public static void resolveDriver(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        if (System.getProperty("os.name").equalsIgnoreCase("linux"))
-        {
-            chromeOptions.addArguments("--headless");
-        }
+        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--no-sandbox");
