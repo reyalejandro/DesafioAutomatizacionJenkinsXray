@@ -8,31 +8,34 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.TsoftSolucionesBusinessPage;
 import pages.TsoftHomePage;
+import pages.TsoftSolucionesPage;
 
 public class SolucionesClickDevelopmentAssessmentSteps extends DriverManager {
     protected TsoftHomePage homePage = null;
-    protected TsoftSolucionesBusinessPage solucionesPage = null;
+    protected TsoftSolucionesBusinessPage businessPage = null;
+    protected TsoftSolucionesPage solucionesPage = null;
 
     @Given("Ingresar a la pagina de TSOFT2")
     public void IngresarTsoftPage2() {
         System.out.println("ingreso a Tsoft");
         homePage = new TsoftHomePage(driver);
-        solucionesPage = new TsoftSolucionesBusinessPage(driver);
+        businessPage = new TsoftSolucionesBusinessPage(driver);
+        solucionesPage = new TsoftSolucionesPage(driver);
 
         homePage.irHomePage();
     }
 
-    @When("Colapsar lista en apartado {string}")
-    public void ColapsarApartadoSoluciones(String seccion) {
-        System.out.println("colapso el apartado " + seccion);
-        homePage.hovearSeccionSolucionesApartadoBusiness(seccion);
+    @When("Clickear seccion {string}")
+    public void ClickearApartadoSoluciones(String seccion) {
+        System.out.println("clickea el apartado " + seccion);
+        homePage.clickearSeccionSoluciones(seccion);
     }
 
 
     @And("Clickeo la opcion {string}")
     public void clickearBusinessSystemTeams(String seccion) {
         System.out.println("Clickeo la opcion "+ seccion);
-        homePage.clickearSeccionSolucionesApartadoBusiness(seccion);
+        solucionesPage.clickearBusiness();
         Assert.assertEquals("https://www.tsoftglobal.com/soluciones/business-system-teams/", driver.getCurrentUrl());
     }
 
@@ -41,6 +44,6 @@ public class SolucionesClickDevelopmentAssessmentSteps extends DriverManager {
     @Then("clickeo la seccion {string}")
     public void clickeoDevelopmentAssessment(String seccion) {
         System.out.println("clickeo seccion " + seccion);
-        solucionesPage.clickearDevelopmentAssessment(seccion);
+        businessPage.clickearDevelopmentAssessment(seccion);
     }
 }

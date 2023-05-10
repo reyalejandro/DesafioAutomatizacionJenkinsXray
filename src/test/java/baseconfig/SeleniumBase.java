@@ -52,26 +52,11 @@ public class SeleniumBase {
         return encontrarElemento(localizador).getText();
     }
 
-    public void clickearSeccion(By localizador,String seccion)
+    public void  clickearSeccion(By localizador,String seccion)
     {
         esperaExplicitaPrescenciaElemento(localizador, 10);
         Assert.assertEquals(obtenerTexto(localizador), seccion);
         clickear(localizador);
-    }
-    public void hoverElement(By localizador, String seccion, By dropdown)
-    {
-        Actions actions = new Actions(driver);
-        WebElement element = encontrarElemento(localizador);
-        Assert.assertEquals(element.getText(), seccion);
-        boolean ishovered;
-        try {
-            actions.moveToElement(element).perform();
-            ishovered = true;
-            esperaExplicitaElementoClickeable(dropdown, 5);
-        } catch (Exception e) {
-            ishovered = false;
-        }
-        Assert.assertTrue(ishovered);
     }
 
 }

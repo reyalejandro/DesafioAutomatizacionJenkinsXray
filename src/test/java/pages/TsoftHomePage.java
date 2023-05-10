@@ -1,5 +1,6 @@
 package pages;
 
+import baseconfig.DriverManager;
 import baseconfig.SeleniumBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +13,7 @@ public class TsoftHomePage extends SeleniumBase{
         PageFactory.initElements(driver, this);}
 
     By btnADNTsoftSeccion = By.xpath("//a[contains(text(),'ADN TSOFT')]");
-    By btnSolucionesSeccion = By.xpath("//li[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4549']");
-    By btnSolucionesBusinessSeccion = By.xpath("//a[text()='BUSINESS SYSTEM TEAMS']");
+    By btnSolucionesSeccion = By.xpath("//a[text()='SOLUCIONES']");
     By btnEventosSeccion = By.xpath("//a[text()='EVENTOS']");
     public void irHomePage(){
         irUrl("https://www.tsoftglobal.com/");
@@ -23,14 +23,10 @@ public class TsoftHomePage extends SeleniumBase{
     {
         clickearSeccion(btnADNTsoftSeccion,str);
     }
-
-    public void hovearSeccionSolucionesApartadoBusiness(String str)
+    public void clickearSeccionSoluciones(String str)
     {
-        hoverElement(btnSolucionesSeccion,str,btnSolucionesBusinessSeccion);
-    }
-    public void clickearSeccionSolucionesApartadoBusiness(String str)
-    {
-        clickearSeccion(btnSolucionesBusinessSeccion,str);
+        clickearSeccion(btnSolucionesSeccion,str);
+        clickearSeccion(btnSolucionesSeccion,str);
     }
     public void clickearSeccionEventos(String str)
     {

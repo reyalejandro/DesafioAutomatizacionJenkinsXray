@@ -7,9 +7,9 @@ Feature: Pruebas relacionadas a TSOFT
 		And Clickeo el primer video en pantalla
 		Then Cierro el video con la 'X' en la parte superior derecha
 	@TEST_XRAY1-43 @TESTPLAN_XRAY1-41
-	Scenario: Colapsar lista en apartado "SOLUCIONES", elegir la opcion "BUSINESS SYSTEM TEAMS", y clickear la sección "Development Assessment"
+	Scenario: Clickear apartado "SOLUCIONES", elegir la opcion "Business System Teams", y clickear la sección "Development Assessment"
 		Given Ingresar a la pagina de TSOFT2
-		When Colapsar lista en apartado "SOLUCIONES"
+		When Clickear seccion "SOLUCIONES"
 		And Clickeo la opcion "BUSINESS SYSTEM TEAMS"
 		Then clickeo la seccion "Development Assessment"
 	@TEST_XRAY1-44 @TESTPLAN_XRAY1-41
