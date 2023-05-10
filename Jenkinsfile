@@ -11,7 +11,7 @@ pipeline {
       stages {
         stage('git') {
           steps {
-            git branch: 'main', url: 'https://github.com/reyalejandro/AutomatizacionGradleJenkins'
+            git branch: 'main', url: 'https://github.com/reyalejandro/DesafioAutomatizacionJenkinsXray'
           }
         }
         stage('gradle') {
