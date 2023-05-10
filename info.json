@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "project": {
+      "id": "10001",
+      "key": "XRAY1"
+    },
+    "summary": "Ejecucion de pruebas Affare Alejandro",
+    "issuetype": {
+      "name": "Test Execution"
+    }
+  },
+  "xrayFields": {
+    "testPlanKey": "XRAY1-11"
+  }
+}
